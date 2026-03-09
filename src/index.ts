@@ -514,6 +514,24 @@ export const chains: Record<string, Chain> = {
   "arbitrum-sepolia": arbitrumSepolia,
   optimism,
   "optimism-sepolia": optimismSepolia,
+  unichain: unichainChain,
+  "unichain-sepolia": unichainSepolia,
+  bsc: bscChain,
+  "bsc-testnet": bscTestnet,
+  linea: lineaChain,
+  "linea-sepolia": lineaSepolia,
+  gnosis: gnosisChain,
+  "gnosis-chiado": gnosisChiado,
+  mantle: mantleChain,
+  "mantle-sepolia": mantleSepolia,
+  metis: metisChain,
+  "metis-sepolia": metisSepolia,
+  megaeth,
+  "megaeth-testnet": megaethTestnet,
+  abstract: abstractChain,
+  "abstract-testnet": abstractTestnet,
+  goat: goatChain,
+  "goat-testnet": goatTestnet,
 };
 
 // Mainnet only mapping
@@ -526,6 +544,15 @@ export const networkToChain: Record<string, Chain> = {
   monad,
   arbitrum,
   optimism,
+  unichain: unichainChain,
+  bsc: bscChain,
+  linea: lineaChain,
+  gnosis: gnosisChain,
+  mantle: mantleChain,
+  metis: metisChain,
+  megaeth,
+  abstract: abstractChain,
+  goat: goatChain,
 };
 
 // ============ USDC Addresses ============
@@ -563,6 +590,42 @@ export const USDC_ADDRESSES: Record<number, `0x${string}`> = {
   10: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
   // OP Sepolia
   11155420: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7",
+  // Unichain
+  130: "0x078D782b760474a361dDA0AF3839290b0EF57AD6",
+  // Unichain Sepolia
+  1301: "0x0000000000000000000000000000000000000000",
+  // BSC
+  56: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+  // BSC Testnet
+  97: "0x0000000000000000000000000000000000000000",
+  // Linea
+  59144: "0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
+  // Linea Sepolia
+  59141: "0x0000000000000000000000000000000000000000",
+  // Gnosis
+  100: "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+  // Gnosis Chiado
+  10200: "0x0000000000000000000000000000000000000000",
+  // Mantle
+  5000: "0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9",
+  // Mantle Sepolia
+  5003: "0x0000000000000000000000000000000000000000",
+  // Metis
+  1088: "0xEA32A96608495e54156Ae48931A7c0f0a5F02F80",
+  // Metis Sepolia
+  59902: "0x0000000000000000000000000000000000000000",
+  // MegaETH
+  4326: "0x0000000000000000000000000000000000000000",
+  // MegaETH Testnet
+  6343: "0x0000000000000000000000000000000000000000",
+  // Abstract
+  2741: "0x84A71ccD554Cc1b02749b35d22F684CC8ec987e1",
+  // Abstract Testnet
+  11124: "0x0000000000000000000000000000000000000000",
+  // GOAT
+  2345: "0x0000000000000000000000000000000000000000",
+  // GOAT Testnet
+  48816: "0x0000000000000000000000000000000000000000",
 };
 
 // ============ Chain IDs ============
