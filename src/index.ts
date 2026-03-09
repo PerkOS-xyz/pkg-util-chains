@@ -5,6 +5,23 @@
 
 import { defineChain } from "viem";
 import type { Chain } from "viem";
+import {
+  bsc as viemBsc,
+  bscTestnet as viemBscTestnet,
+  linea as viemLinea,
+  lineaSepolia as viemLineaSepolia,
+  gnosis as viemGnosis,
+  gnosisChiado as viemGnosisChiado,
+  mantle as viemMantle,
+  mantleSepoliaTestnet as viemMantleSepolia,
+  unichain as viemUnichain,
+  unichainSepolia as viemUnichainSepolia,
+  metis as viemMetis,
+  metisSepolia as viemMetisSepolia,
+  abstract as viemAbstract,
+  abstractTestnet as viemAbstractTestnet,
+  goat as viemGoat,
+} from "viem/chains";
 
 // ============ Chain Definitions ============
 
@@ -370,6 +387,110 @@ export const optimismSepolia = defineChain({
   },
   blockExplorers: {
     default: { name: "Optimism Explorer", url: "https://sepolia-optimism.etherscan.io" },
+  },
+  testnet: true,
+});
+
+// Unichain Mainnet
+export const unichainChain: Chain = viemUnichain;
+
+// Unichain Sepolia
+export const unichainSepolia: Chain = viemUnichainSepolia;
+
+// BSC Mainnet
+export const bscChain: Chain = viemBsc;
+
+// BSC Testnet
+export const bscTestnet: Chain = viemBscTestnet;
+
+// Linea Mainnet
+export const lineaChain: Chain = viemLinea;
+
+// Linea Sepolia
+export const lineaSepolia: Chain = viemLineaSepolia;
+
+// Gnosis Mainnet
+export const gnosisChain: Chain = viemGnosis;
+
+// Gnosis Chiado Testnet
+export const gnosisChiado: Chain = viemGnosisChiado;
+
+// Mantle Mainnet
+export const mantleChain: Chain = viemMantle;
+
+// Mantle Sepolia Testnet
+export const mantleSepolia: Chain = viemMantleSepolia;
+
+// Metis Mainnet
+export const metisChain: Chain = viemMetis;
+
+// Metis Sepolia Testnet
+export const metisSepolia: Chain = viemMetisSepolia;
+
+// MegaETH Mainnet
+export const megaeth = defineChain({
+  id: 4326,
+  name: "MegaETH",
+  network: "megaeth",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: { http: ["https://mainnet.megaeth.com/rpc"] },
+    public: { http: ["https://mainnet.megaeth.com/rpc"] },
+  },
+  blockExplorers: {
+    default: { name: "MegaETH Explorer", url: "https://megaeth.blockscout.com" },
+  },
+});
+
+// MegaETH Testnet
+export const megaethTestnet = defineChain({
+  id: 6343,
+  name: "MegaETH Testnet",
+  network: "megaeth-testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: { http: ["https://carrot.megaeth.com/rpc"] },
+    public: { http: ["https://carrot.megaeth.com/rpc"] },
+  },
+  blockExplorers: {
+    default: { name: "MegaETH Testnet Explorer", url: "https://megaeth-testnet.blockscout.com" },
+  },
+  testnet: true,
+});
+
+// Abstract Mainnet
+export const abstractChain: Chain = viemAbstract;
+
+// Abstract Testnet
+export const abstractTestnet: Chain = viemAbstractTestnet;
+
+// GOAT Mainnet
+export const goatChain: Chain = viemGoat;
+
+// GOAT Testnet
+export const goatTestnet = defineChain({
+  id: 48816,
+  name: "GOAT Testnet3",
+  network: "goat-testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Bitcoin",
+    symbol: "BTC",
+  },
+  rpcUrls: {
+    default: { http: ["https://rpc.testnet3.goat.network"] },
+    public: { http: ["https://rpc.testnet3.goat.network"] },
+  },
+  blockExplorers: {
+    default: { name: "GOAT Explorer", url: "https://explorer.testnet3.goat.network" },
   },
   testnet: true,
 });
