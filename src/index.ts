@@ -5,6 +5,23 @@
 
 import { defineChain } from "viem";
 import type { Chain } from "viem";
+import {
+  bsc as viemBsc,
+  bscTestnet as viemBscTestnet,
+  linea as viemLinea,
+  lineaSepolia as viemLineaSepolia,
+  gnosis as viemGnosis,
+  gnosisChiado as viemGnosisChiado,
+  mantle as viemMantle,
+  mantleSepoliaTestnet as viemMantleSepolia,
+  unichain as viemUnichain,
+  unichainSepolia as viemUnichainSepolia,
+  metis as viemMetis,
+  metisSepolia as viemMetisSepolia,
+  abstract as viemAbstract,
+  abstractTestnet as viemAbstractTestnet,
+  goat as viemGoat,
+} from "viem/chains";
 
 // ============ Chain Definitions ============
 
@@ -374,6 +391,110 @@ export const optimismSepolia = defineChain({
   testnet: true,
 });
 
+// Unichain Mainnet
+export const unichainChain: Chain = viemUnichain;
+
+// Unichain Sepolia
+export const unichainSepolia: Chain = viemUnichainSepolia;
+
+// BSC Mainnet
+export const bscChain: Chain = viemBsc;
+
+// BSC Testnet
+export const bscTestnet: Chain = viemBscTestnet;
+
+// Linea Mainnet
+export const lineaChain: Chain = viemLinea;
+
+// Linea Sepolia
+export const lineaSepolia: Chain = viemLineaSepolia;
+
+// Gnosis Mainnet
+export const gnosisChain: Chain = viemGnosis;
+
+// Gnosis Chiado Testnet
+export const gnosisChiado: Chain = viemGnosisChiado;
+
+// Mantle Mainnet
+export const mantleChain: Chain = viemMantle;
+
+// Mantle Sepolia Testnet
+export const mantleSepolia: Chain = viemMantleSepolia;
+
+// Metis Mainnet
+export const metisChain: Chain = viemMetis;
+
+// Metis Sepolia Testnet
+export const metisSepolia: Chain = viemMetisSepolia;
+
+// MegaETH Mainnet
+export const megaeth = defineChain({
+  id: 4326,
+  name: "MegaETH",
+  network: "megaeth",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: { http: ["https://mainnet.megaeth.com/rpc"] },
+    public: { http: ["https://mainnet.megaeth.com/rpc"] },
+  },
+  blockExplorers: {
+    default: { name: "MegaETH Explorer", url: "https://megaeth.blockscout.com" },
+  },
+});
+
+// MegaETH Testnet
+export const megaethTestnet = defineChain({
+  id: 6343,
+  name: "MegaETH Testnet",
+  network: "megaeth-testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: { http: ["https://carrot.megaeth.com/rpc"] },
+    public: { http: ["https://carrot.megaeth.com/rpc"] },
+  },
+  blockExplorers: {
+    default: { name: "MegaETH Testnet Explorer", url: "https://megaeth-testnet.blockscout.com" },
+  },
+  testnet: true,
+});
+
+// Abstract Mainnet
+export const abstractChain: Chain = viemAbstract;
+
+// Abstract Testnet
+export const abstractTestnet: Chain = viemAbstractTestnet;
+
+// GOAT Mainnet
+export const goatChain: Chain = viemGoat;
+
+// GOAT Testnet
+export const goatTestnet = defineChain({
+  id: 48816,
+  name: "GOAT Testnet3",
+  network: "goat-testnet",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Bitcoin",
+    symbol: "BTC",
+  },
+  rpcUrls: {
+    default: { http: ["https://rpc.testnet3.goat.network"] },
+    public: { http: ["https://rpc.testnet3.goat.network"] },
+  },
+  blockExplorers: {
+    default: { name: "GOAT Explorer", url: "https://explorer.testnet3.goat.network" },
+  },
+  testnet: true,
+});
+
 // ============ Chain Registry ============
 
 export const chains: Record<string, Chain> = {
@@ -393,6 +514,24 @@ export const chains: Record<string, Chain> = {
   "arbitrum-sepolia": arbitrumSepolia,
   optimism,
   "optimism-sepolia": optimismSepolia,
+  unichain: unichainChain,
+  "unichain-sepolia": unichainSepolia,
+  bsc: bscChain,
+  "bsc-testnet": bscTestnet,
+  linea: lineaChain,
+  "linea-sepolia": lineaSepolia,
+  gnosis: gnosisChain,
+  "gnosis-chiado": gnosisChiado,
+  mantle: mantleChain,
+  "mantle-sepolia": mantleSepolia,
+  metis: metisChain,
+  "metis-sepolia": metisSepolia,
+  megaeth,
+  "megaeth-testnet": megaethTestnet,
+  abstract: abstractChain,
+  "abstract-testnet": abstractTestnet,
+  goat: goatChain,
+  "goat-testnet": goatTestnet,
 };
 
 // Mainnet only mapping
@@ -405,6 +544,15 @@ export const networkToChain: Record<string, Chain> = {
   monad,
   arbitrum,
   optimism,
+  unichain: unichainChain,
+  bsc: bscChain,
+  linea: lineaChain,
+  gnosis: gnosisChain,
+  mantle: mantleChain,
+  metis: metisChain,
+  megaeth,
+  abstract: abstractChain,
+  goat: goatChain,
 };
 
 // ============ USDC Addresses ============
@@ -442,6 +590,42 @@ export const USDC_ADDRESSES: Record<number, `0x${string}`> = {
   10: "0x0b2C639c533813f4Aa9D7837CAf62653d097Ff85",
   // OP Sepolia
   11155420: "0x5fd84259d66Cd46123540766Be93DFE6D43130D7",
+  // Unichain
+  130: "0x078D782b760474a361dDA0AF3839290b0EF57AD6",
+  // Unichain Sepolia
+  1301: "0x0000000000000000000000000000000000000000",
+  // BSC
+  56: "0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d",
+  // BSC Testnet
+  97: "0x0000000000000000000000000000000000000000",
+  // Linea
+  59144: "0x176211869cA2b568f2A7D4EE941E073a821EE1ff",
+  // Linea Sepolia
+  59141: "0x0000000000000000000000000000000000000000",
+  // Gnosis
+  100: "0xDDAfbb505ad214D7b80b1f830fcCc89B60fb7A83",
+  // Gnosis Chiado
+  10200: "0x0000000000000000000000000000000000000000",
+  // Mantle
+  5000: "0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9",
+  // Mantle Sepolia
+  5003: "0x0000000000000000000000000000000000000000",
+  // Metis
+  1088: "0xEA32A96608495e54156Ae48931A7c0f0a5F02F80",
+  // Metis Sepolia
+  59902: "0x0000000000000000000000000000000000000000",
+  // MegaETH
+  4326: "0x0000000000000000000000000000000000000000",
+  // MegaETH Testnet
+  6343: "0x0000000000000000000000000000000000000000",
+  // Abstract
+  2741: "0x84A71ccD554Cc1b02749b35d22F684CC8ec987e1",
+  // Abstract Testnet
+  11124: "0x0000000000000000000000000000000000000000",
+  // GOAT
+  2345: "0x0000000000000000000000000000000000000000",
+  // GOAT Testnet
+  48816: "0x0000000000000000000000000000000000000000",
 };
 
 // ============ Chain IDs ============
@@ -463,6 +647,24 @@ export const CHAIN_IDS = {
   ARBITRUM_SEPOLIA: 421614,
   OPTIMISM: 10,
   OPTIMISM_SEPOLIA: 11155420,
+  UNICHAIN: 130,
+  UNICHAIN_SEPOLIA: 1301,
+  BSC: 56,
+  BSC_TESTNET: 97,
+  LINEA: 59144,
+  LINEA_SEPOLIA: 59141,
+  GNOSIS: 100,
+  GNOSIS_CHIADO: 10200,
+  MANTLE: 5000,
+  MANTLE_SEPOLIA: 5003,
+  METIS: 1088,
+  METIS_SEPOLIA: 59902,
+  MEGAETH: 4326,
+  MEGAETH_TESTNET: 6343,
+  ABSTRACT: 2741,
+  ABSTRACT_TESTNET: 11124,
+  GOAT: 2345,
+  GOAT_TESTNET: 48816,
 } as const;
 
 export type ChainId = (typeof CHAIN_IDS)[keyof typeof CHAIN_IDS];
@@ -486,6 +688,24 @@ export const SUPPORTED_NETWORKS = [
   "arbitrum-sepolia",
   "optimism",
   "optimism-sepolia",
+  "unichain",
+  "unichain-sepolia",
+  "bsc",
+  "bsc-testnet",
+  "linea",
+  "linea-sepolia",
+  "gnosis",
+  "gnosis-chiado",
+  "mantle",
+  "mantle-sepolia",
+  "metis",
+  "metis-sepolia",
+  "megaeth",
+  "megaeth-testnet",
+  "abstract",
+  "abstract-testnet",
+  "goat",
+  "goat-testnet",
 ] as const;
 
 export type SupportedNetwork = (typeof SUPPORTED_NETWORKS)[number];
